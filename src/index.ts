@@ -4,27 +4,30 @@ import {
 } from '@jupyterlab/application';
 
 import { ISettingRegistry } from '@jupyterlab/settingregistry';
-
+import * as Sentry from "@sentry/react";
+import { BrowserTracing } from "@sentry/tracing";
 /**
  * Initialization data for the jupyterlab-sentry extension.
  */
+const PLUGIN_ID = 'jupyterlab-sentry:plugin';
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'jupyterlab-sentry:plugin',
+  id: PLUGIN_ID,
   autoStart: true,
-  optional: [ISettingRegistry],
-  activate: (app: JupyterFrontEnd, settingRegistry: ISettingRegistry | null) => {
-    console.log('JupyterLab extension jupyterlab-sentry is activated!');
+  requires: [ISettingRegistry],
+  activate: async (
+    app: JupyterFrontEnd,
+    settingRegistry: ISettingRegistry,
+  ) => {
+    const setting = await settingRegistry.load(PLUGIN_ID)
+    Sentry.init({
+      dsn: setting.get('dsn').composite as string,
+      integrations: [new BrowserTracing()],
 
-    if (settingRegistry) {
-      settingRegistry
-        .load(plugin.id)
-        .then(settings => {
-          console.log('jupyterlab-sentry settings loaded:', settings.composite);
-        })
-        .catch(reason => {
-          console.error('Failed to load settings for jupyterlab-sentry.', reason);
-        });
-    }
+      // Set tracesSampleRate to 1.0 to capture 100%
+      // of transactions for performance monitoring.
+      // We recommend adjusting this value in production
+      tracesSampleRate: 1.0,
+    });
   }
 };
 
