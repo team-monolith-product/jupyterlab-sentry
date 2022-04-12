@@ -1,0 +1,8 @@
+{
+  "jupyter.lab.shortcuts": [],
+  "title": "jupyterlab-sentry",
+  "description": "jupyterlab-sentry settings.",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}
