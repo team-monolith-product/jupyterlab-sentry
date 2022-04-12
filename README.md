@@ -2,9 +2,7 @@
 
 [![Github Actions Status](https://github.com/team-monolith-product/jupyterlab-sentry/workflows/Build/badge.svg)](https://github.com/team-monolith-product/jupyterlab-sentry/actions/workflows/build.yml)
 
-Sentry integration for jupyter lab
-
-
+[Sentry](https://sentry.io/) integration for jupyter lab
 
 ## Requirements
 
@@ -16,6 +14,35 @@ To install the extension, execute:
 
 ```bash
 pip install jupyterlab_sentry
+```
+
+### Sentry DSN
+
+We are using [jupyter lab extension settings](https://github.com/jupyterlab/extension-examples/tree/master/settings) for Sentry DSN.
+After installation, you can find that `jupyterlab-sentry` settings are available in advanced settings.
+However, this setting is only applied to the user who set this value manually.
+In most cases, you might want all your users to be reported by sentry.
+![제목 없음](https://user-images.githubusercontent.com/4434752/163006492-292a3572-10e1-4fcb-9acf-f0b1116580de.png)
+
+We are using [overrides.json](https://jupyterlab.readthedocs.io/en/stable/user/directories.html#overrides-json). This file can be installed to your node or docker image.
+
+`/<project>/Dockerfile`
+``` 
+# Choose version whatever you want
+FROM jupyter/base-notebook:lab-3.2.9 as base
+
+COPY overrides.json ${CONDA_DIR}/share/jupyter/lab/settings/overrides.json
+
+# ...
+```
+
+`/<project>/overrides.json`
+```
+{
+    "jupyterlab-sentry:plugin": {
+        "dsn": "https://yourdsn@asdf.ingest.sentry.io/1234"
+    }
+}
 ```
 
 ## Uninstall
