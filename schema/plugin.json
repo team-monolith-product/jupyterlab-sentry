@@ -7,7 +7,8 @@
     "dsn": {
       "type": "string",
       "title": "DSN",
-      "description": "Sentry DSN like https://aaaacccc99994444bbbb55550000dddd@a1234567.ingest.sentry.io/9876543"
+      "description": "Sentry DSN like https://aaaacccc99994444bbbb55550000dddd@a1234567.ingest.sentry.io/9876543",
+      "default": "https://aaaacccc99994444bbbb55550000dddd@a1234567.ingest.sentry.io/9876543"
     }
   },
   "additionalProperties": false
