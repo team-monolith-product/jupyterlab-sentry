@@ -2,7 +2,11 @@
 
 [![Github Actions Status](https://github.com/team-monolith-product/jupyterlab-sentry/workflows/Build/badge.svg)](https://github.com/team-monolith-product/jupyterlab-sentry/actions/workflows/build.yml)
 
-[Sentry](https://sentry.io/) integration for jupyter lab
+[Sentry](https://sentry.io/) integration for jupyter lab.
+
+Highly customized and crowded jupyter lab environment might face odd behaviors and errors. Error reporting and analysis tools can help us identify and fix errors. Sentry is one of those tools. 
+
+
 
 ## Requirements
 
@@ -105,3 +109,11 @@ folder is located. Then you can remove the symlink named `jupyterlab-sentry` wit
 ### Packaging the extension
 
 See [RELEASE](RELEASE.md)
+
+### Our problems and goals
+
+In theory, Sentry agent should be initialized as soon as possible. But, jupyter lab extensions are loaded much later. 
+
+Sentry report would be improved if we feed them additional information like user id.
+
+Jupyter lab setting is not bad for deliverying DSN value, but I'm a little worried that users might change their DSN value. It is also a bit complicated to set up `overrides.json`.
