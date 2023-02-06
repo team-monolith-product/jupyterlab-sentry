@@ -2,6 +2,22 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 0.4.0
+
+([Full Changelog](https://github.com/team-monolith-product/jupyterlab-sentry/compare/v0.3.0...08c5af36dcf3ea3be83923f25cfb23c76db43bb5))
+
+### Merged PRs
+
+- feat: Change react plugin to js plugin [#11](https://github.com/team-monolith-product/jupyterlab-sentry/pull/11) ([@a3626a](https://github.com/a3626a))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/team-monolith-product/jupyterlab-sentry/graphs/contributors?from=2023-02-06&to=2023-02-06&type=c))
+
+[@a3626a](https://github.com/search?q=repo%3Ateam-monolith-product%2Fjupyterlab-sentry+involves%3Aa3626a+updated%3A2023-02-06..2023-02-06&type=Issues)
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## 0.3.0
 
 ([Full Changelog](https://github.com/team-monolith-product/jupyterlab-sentry/compare/v0.2.1...9fd77c52a39307d513540ed8f7b01e7616552aba))
@@ -16,8 +32,6 @@
 ([GitHub contributors page for this release](https://github.com/team-monolith-product/jupyterlab-sentry/graphs/contributors?from=2022-04-12&to=2023-02-06&type=c))
 
 [@a3626a](https://github.com/search?q=repo%3Ateam-monolith-product%2Fjupyterlab-sentry+involves%3Aa3626a+updated%3A2022-04-12..2023-02-06&type=Issues)
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 0.2.1
 
