@@ -9,6 +9,12 @@
       "title": "DSN",
       "description": "Sentry DSN like https://aaaacccc99994444bbbb55550000dddd@a1234567.ingest.sentry.io/9876543",
       "default": "https://aaaacccc99994444bbbb55550000dddd@a1234567.ingest.sentry.io/9876543"
+    },
+    "tracesSampleRate": {
+      "type": "number",
+      "title": "Traces Sample Rate",
+      "description": "Sample rate to determine trace sampling.",
+      "default": 0.01
     }
   },
   "additionalProperties": false

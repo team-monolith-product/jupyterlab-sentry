@@ -56,8 +56,8 @@
   "dependencies": {
     "@jupyterlab/application": "4.0.0-alpha.14",
     "@jupyterlab/settingregistry": "4.0.0-alpha.14",
-    "@sentry/react": "^6.19.6",
-    "@sentry/tracing": "^6.19.6"
+    "@sentry/react": "^7.36.0",
+    "@sentry/tracing": "^7.36.0"
   },
   "devDependencies": {
     "@jupyterlab/builder": "4.0.0-alpha.14",
@@ -88,16 +88,5 @@
     "extension": true,
     "outputDir": "jupyterlab_sentry/labextension",
     "schemaDir": "schema"
-  },
-  "jupyter-releaser": {
-    "hooks": {
-      "before-build-npm": [
-        "python -m pip install jupyterlab==4.0.0a29",
-        "jlpm"
-      ],
-      "before-build-python": [
-        "jlpm clean:all"
-      ]
-    }
   }
 }
