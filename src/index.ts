@@ -4,7 +4,7 @@ import {
 } from '@jupyterlab/application';
 
 import { ISettingRegistry } from '@jupyterlab/settingregistry';
-import * as Sentry from "@sentry/react";
+import * as Sentry from "@sentry/browser";
 import { BrowserTracing } from "@sentry/tracing";
 /**
  * Initialization data for the jupyterlab-sentry extension.
