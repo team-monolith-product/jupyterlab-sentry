@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab-sentry",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Sentry integration for jupyter lab",
   "keywords": [
     "jupyter",
@@ -56,8 +56,8 @@
   "dependencies": {
     "@jupyterlab/application": "^3.1.0",
     "@jupyterlab/settingregistry": "^3.3.3",
-    "@sentry/react": "^6.19.6",
-    "@sentry/tracing": "^6.19.6"
+    "@sentry/react": "^7.36.0",
+    "@sentry/tracing": "^7.36.0"
   },
   "devDependencies": {
     "@jupyterlab/builder": "^3.1.0",
